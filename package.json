@@ -1,0 +1,27 @@
+{
+  "name": "NodeJs-test-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akvilon/NodeJs-test-proj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akvilon/NodeJs-test-proj/issues"
+  },
+  "homepage": "https://github.com/Akvilon/NodeJs-test-proj#readme"
+}
