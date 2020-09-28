@@ -11,7 +11,9 @@ const hbs = exphbs.create({
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
-app.set('views', 'pages')
+app.set('views', 'pages');
+
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('index')
