@@ -1,0 +1,26 @@
+<h1>Add sneaker</h1>
+
+
+<form action="/add" method="POST">
+    <div class="input-field">
+        <input id="brand" name="brand" type="text" class="validate" required>
+        <label for="brand">Brand</label>
+        <span class="helper-text" data-error="Type brand please"></span>
+    </div>
+     <div class="input-field">
+        <input id="model"  name="model" type="text" class="validate" required>
+        <label for="model">Model</label>
+        <span class="helper-text" data-error="Type model please"></span>
+    </div>
+     <div class="input-field">
+        <input id="img"  name="img" type="text" class="validate" required>
+        <label for="img">Image URL</label>
+        <span class="helper-text" data-error="Type image url please"></span>
+    </div>
+     <div class="input-field">
+        <input id="price"  name="price" type="text" class="validate" required min=1>
+        <label for="price">Price</label>
+        <span class="helper-text" data-error="Type price please"></span>
+    </div>
+    <button class="btn btn-primary">Add Sneaker</button>
+</form>
