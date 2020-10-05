@@ -11,10 +11,15 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const sneaker = new Sneaker(req.body.brand, req.body.model, req.body.img, req.body.price)
-    await sneaker.save()
-
-    res.redirect('/sneakers')
+    try {
+        const sneaker = new Sneaker(req.body.brand, req.body.model, req.body.img, req.body.price)
+        await sneaker.save()
+    
+        res.redirect('/sneakers')
+    } catch (e) {
+        throw e
+    }
+    
 })
 
 module.exports = router;

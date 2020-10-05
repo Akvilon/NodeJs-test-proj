@@ -55,6 +55,15 @@ class Sneaker  {
             )
         })
     }
+
+    static async getById(id) {
+        try {
+            const sneakers = await Sneaker.getAllData()
+            return sneakers.find(s => s.id === id)
+        } catch (e) {
+            throw e
+        }
+    }
 }
 
 module.exports = Sneaker
