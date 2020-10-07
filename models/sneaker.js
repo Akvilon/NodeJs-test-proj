@@ -21,6 +21,26 @@ class Sneaker  {
         }
     }
 
+    static async update(sneaker) {
+        const sneakers = await Sneaker.getAllData()
+        const indx = sneakers.findIndex(s => s.id === sneaker.id)
+        sneakers[indx] = sneaker
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'sneakers.json'),
+                JSON.stringify(sneakers),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                }
+            )
+        })
+    }
+
     async save() {
         const sneakers = await Sneaker.getAllData()
         sneakers.push(this.createDataObj())

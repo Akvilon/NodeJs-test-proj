@@ -1,0 +1,32 @@
+<h1>{{sneaker.model}}</h1>
+
+
+<form action="/sneakers/edit" method="POST">
+    <div class="input-field">
+        <input id="brand" name="brand" type="text" class="validate" required value="{{sneaker.brand}}">
+        <label for="brand">Brand</label>
+        <span class="helper-text" data-error="Type brand please"></span>
+    </div>
+
+     <div class="input-field">
+        <input id="model"  name="model" type="text" class="validate" required value="{{sneaker.model}}">
+        <label for="model">Model</label>
+        <span class="helper-text" data-error="Type model please"></span>
+    </div>
+
+     <div class="input-field">
+        <input id="img"  name="img" type="text" class="validate" required value="{{sneaker.img}}">
+        <label for="img">Image URL</label>
+        <span class="helper-text" data-error="Type image url please"></span>
+    </div>
+
+     <div class="input-field">
+        <input id="price"  name="price" type="text" class="validate" required min='1' value="{{sneaker.price}}">
+        <label for="price">Price</label>
+        <span class="helper-text" data-error="Type price please"></span>
+    </div>
+
+    <input type="hidden" name="id" value="{{sneaker.id}}">
+
+    <button class="btn btn-primary">Edit Sneaker</button>
+</form>

@@ -3,6 +3,9 @@
     padding: 0 2rem;
 }
 
+.sneakers-list {
+    display: flex;
+}
 .sneaker {
     width: 100%;
     display: flex;

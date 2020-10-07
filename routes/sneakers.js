@@ -11,6 +11,25 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/:id/edit', async (req, res) => {
+    if(!req.query.allow) {
+        return res.redirect('/')
+    }
+
+    const sneaker = await Sneaker.getById(req.params.id)
+
+    res.render('sneaker-edit', {
+        title: `Edit ${sneaker.model}`,
+        sneaker
+    })
+})
+
+router.post('/edit', async (req, res) => {
+    console.log('req.body',req.body)
+    await Sneaker.update(req.body)
+    res.redirect('/sneakers')
+})
+
 router.get('/:id', async (req, res) => {
     try {
         const sneaker = await Sneaker.getById(req.params.id)
